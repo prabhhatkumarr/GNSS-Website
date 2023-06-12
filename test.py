@@ -1,45 +1,60 @@
 import streamlit as st
 
-# Define the available topics, their content, and associated image URLs
-topics = {
-    "Agri": {
-        "content": "Information about agriculture",
-        "image": r"Agri.jpg"
-    },
-    "Sky Plots": {
-        "content": "Information about sky plots",
-        "image": r"SkyPlot1.jpg"
-    },
-    # Add more topics, content, and image URLs as needed
+# Set page config
+st.set_page_config(page_title="Webpage Example", page_icon=":earth_americas:")
+
+# Custom CSS
+custom_css = """
+<style>
+:root {
+    --sidebar-width: 200px;
+    color: green;
 }
 
-# Render the introduction on the entry page
-intro_placeholder = st.empty()
-intro_placeholder.title("Welcome to the Knowledge Base!")
-intro_placeholder.write("This website provides information on various topics. Please select a topic from the sidebar to learn more.")
+/* Reduce the sidebar width */
+.stSidebar > div:first-child {
+    width: var(--sidebar-width);
+}
 
-# Render the sidebar with the topic buttons
+/* Center align the headings */
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    color: black;
+}
+
+/* Center align the images */
+.stImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
+"""
+st.markdown(custom_css, unsafe_allow_html=True)
+
+# Sidebar
 st.sidebar.title("Topics")
+topic = st.sidebar.radio("", ("Home", "Agri", "Sky Plots", "Contact Us"))
 
-# Check if a topic button is clicked
-clicked_topic = None
-for topic in topics:
-    if st.sidebar.button(topic):
-        clicked_topic = topic
+# Main content
+st.title("Welcome!")
 
-# Clear the introduction section if a topic is clicked
-if clicked_topic:
-    intro_placeholder.empty()
+if topic == "Home":
+    # st.header("Home")
+    st.image("https://images.edexlive.com/uploads/user/imagelibrary/2020/5/14/original/25948_IITK_New.jpg")
+    # st.write("This is the Home page.")
 
-    st.title(clicked_topic)
-    # Style the topic font and align center
-    st.markdown(f"<h2 style='font-family: Arial; text-align: center;'>{clicked_topic}</h2>", unsafe_allow_html=True)
+elif topic == "Agri":
+    st.header("Agri")
+    st.image("Agri.jpg")
+    st.write("This is the Sites page. Here, you can find information about different sites.")
 
-    # Render the image with reduced size
-    image_url = topics[clicked_topic]["image"]
-    if image_url:
-        st.image(image_url, width=300)  # Adjust the width as needed
+elif topic == "Sky Plots":
+    st.header("Sky Plots")
+    st.image("SkyPlot1.jpg")
+    st.write("This is the Sky Plots page. Here, you can explore various sky plots.")
 
-    # Render the content
-    content = topics[clicked_topic]["content"]
-    st.write(content)
+elif topic == "Contact Us":
+    st.header("Contact Us")
+    # st.image("contact_us_image.jpg")
+    st.write("This is the Contact Us page. You can reach out to us through the provided contact details.")
