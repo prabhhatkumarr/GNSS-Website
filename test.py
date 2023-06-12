@@ -37,7 +37,7 @@ st.sidebar.title("Topics")
 topic = st.sidebar.radio("", ("Home", "Agri", "Sky Plots", "Contact Us"))
 
 # Main content
-st.title("Welcome!")
+st.title("Welcome")
 
 if topic == "Home":
     # st.header("Home")
