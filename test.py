@@ -34,25 +34,49 @@ st.markdown(custom_css, unsafe_allow_html=True)
 
 # Sidebar
 st.sidebar.title("Topics")
-topic = st.sidebar.radio("", ("Home", "Agri", "Sky Plots", "Contact Us"))
+topic = st.sidebar.radio("", ("Home", "AGRI", "HA11", "WLEO", "FAAP", "BUHJ", "MCPG", "NITW", "IHET", "Contact Us" ))
 
 # Main content
-st.title("Welcome")
+
 
 if topic == "Home":
-    # st.header("Home")
-    st.image("https://images.edexlive.com/uploads/user/imagelibrary/2020/5/14/original/25948_IITK_New.jpg")
+    st.title("Heterogenous Network of Low-Cost GNSS Receivers")
+    st.image(r"I1.png")
     # st.write("This is the Home page.")
 
-elif topic == "Agri":
-    st.header("Agri")
-    st.image("Agri.jpg")
+elif topic == "AGRI":
+    st.header("Agricultural Plot(AGRI)")
+    st.image("I2.png")
     st.write("This is the Sites page. Here, you can find information about different sites.")
 
-elif topic == "Sky Plots":
-    st.header("Sky Plots")
-    st.image("SkyPlot1.jpg")
-    st.write("This is the Sky Plots page. Here, you can explore various sky plots.")
+elif topic == "HA11":
+    st.header("Hall of Residence - XII")
+    st.image("I3.png")
+    st.write("Hall 11 Info")
+
+elif topic == "WLEO":
+    st.header("Western Lab Extension")
+    st.image("I4.png")
+    
+elif topic == "FAAP":
+    st.header("Faculty Apartment")
+    st.image("I5.png")
+    
+elif topic == "BUHJ":
+    st.header("Bundelkhand University, Jhansi, Uttar Pradesh")
+    st.image("I6.png")
+    
+elif topic == "MCPG":
+    st.header("Manas College, Pitthoragarh, Uttarakhand")
+    st.image("I7.png")
+    
+elif topic == "NITW":
+    st.header("National Institute of Technology, Warangal, Telangana")
+    st.image("I8.png")
+    
+elif topic == "IHET":
+    st.header("Institute of Hydropower Engineering and Technology, Tehri, Uttarakhand ")
+    st.image("I9.png")
 
 elif topic == "Contact Us":
     st.header("Contact Us")
