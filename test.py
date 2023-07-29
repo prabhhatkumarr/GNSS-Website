@@ -50,7 +50,7 @@ elif topic == "AGRI":
     st.write("This is the Sites page. Here, you can find information about different sites.")
 
 elif topic == "HA11":
-    st.header("Hall of Residence - XII")
+    st.header("Hall of Residence - XI")
     st.image("I3.png")
     st.write("Hall 11 Info")
 
