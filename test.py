@@ -34,7 +34,7 @@ st.markdown(custom_css, unsafe_allow_html=True)
 
 # Sidebar
 st.sidebar.title("Topics")
-topic = st.sidebar.radio("", ("Home", "AGRI", "HA11", "WLEO", "FAAP", "BUHJ", "MCPG", "NITW", "IHET", "Contact Us" ))
+topic = st.sidebar.radio("", ("Home", "AGRI", "HA11", "WLEO", "FAAP", "BUHJ", "NITW", "IHET", "Contact Us" ))
 
 # Main content
 
@@ -66,9 +66,6 @@ elif topic == "BUHJ":
     st.header("Bundelkhand University, Jhansi, Uttar Pradesh")
     st.image("I6.png")
     
-elif topic == "MCPG":
-    st.header("Manas College, Pitthoragarh, Uttarakhand")
-    st.image("I7.png")
     
 elif topic == "NITW":
     st.header("National Institute of Technology, Warangal, Telangana")
